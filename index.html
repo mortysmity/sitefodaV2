@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>slider in Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+
+        <a href="/index.html"><img src="images/logo.png" alt="Logo da Empresa"></a>
+        <nav>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre </a></li>
+            <li><a href="#">catalogos </a></li>
+            <li><a href="#">preço </a></li>
+        </nav>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('images/banerA.png')">
+                <div class="container">
+                    <div class="caption">
+                        <!--<h1>1. Winter Collection 2020</h1>
+                    <p>Lorem ipsum dummy text goes here.</p>
+                    <a href="">Shop Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/banerb.pngs')">
+                <div class="container">
+                    <div class="caption">
+                        <!--<h1>2. Winter ngCollection 2020</h1>
+                    <p>Lorem ipsum dummy text goes here.</p>
+                    <a href="">Shop Now</a>-->
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/banerc.png')">
+                <div class="container">
+                    <div class="caption">
+                        <!--<h1>3. Winter Collection 2020</h1>
+                    <p>Lorem ipsum dummy text goes here.</p>
+                    <a href="">Shop Now</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- controls  -->
+        <div class="controls">
+            <div class="prev">
+                <</div> <div class="next">>
+            </div>
+        </div>
+
+        <!-- indicators -->
+        <div class="indicator">
+        </div>
+
+    </section>
+
+    <section id="parallaxBar" data-speed="6" data-type="background">
+        <div class="container-fluid">
+        </div>
+    </section>
+    <section id="textop">
+        <p>Bem-vindo!!A um mundo de diversão com muitos desafios.Onde você encotrará diversos mundos.<br>
+            Venha conhecer e viver novas experiências.Tudo isso está disponível no nosso site  Bad rabbit.<br>
+             Temos uma  promoção 5% de desconto  na primeira compra . Nossos preços estão abaixo da valor de mercado!
+              <br> Com valores de até $500<br> Em caso de duvida ou se ocorrer algum problema, entre em contato pelos 
+              nossos canais. <divid="canais"><a href="#"> Canais </a></div> </p>
+   
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $window = $(window);
+            //Captura cada elemento section com o data-type "background"
+            $('section[data-type="background"]').each(function () {
+                var $scroll = $(this);
+                //Captura o evento scroll do navegador e modifica o backgroundPosition de acordo com seu deslocamento.            
+                $(window).scroll(function () {
+                    var yPos = -($window.scrollTop() / $scroll.data('speed'));
+                    var coords = '50% ' + yPos + 'px';
+                    $scroll.css({
+                        backgroundPosition: coords
+                    });
+                });
+            });
+        });
+        
+    </script>
+  
+
+</body>
+
+</html>
